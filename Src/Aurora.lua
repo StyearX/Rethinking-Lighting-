@@ -15,9 +15,9 @@ local polarLightsEmitter = Instance.new("ParticleEmitter")
 polarLightsEmitter.Name = "polarLightsEmitter"
 polarLightsEmitter.Brightness = 0.3
 polarLightsEmitter.LightEmission = 1
-polarLightsEmitter.LightInfluence = 0
+polarLightsEmitter.LightInfluence = 0.2
 polarLightsEmitter.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-polarLightsEmitter.Size = NumberSequence.new(700)
+polarLightsEmitter.Size = NumberSequence.new(1400)
 polarLightsEmitter.Squash = NumberSequence.new(2, 2)
 polarLightsEmitter.Texture = "rbxassetid://110170832236629"
 polarLightsEmitter.Transparency = NumberSequence.new({
@@ -27,7 +27,7 @@ polarLightsEmitter.Transparency = NumberSequence.new({
 	NumberSequenceKeypoint.new(1, 1)
 })
 polarLightsEmitter.Lifetime = NumberRange.new(2, 4)
-polarLightsEmitter.Rate = 200
+polarLightsEmitter.Rate = 230
 polarLightsEmitter.Speed = NumberRange.new(10000)
 polarLightsEmitter.SpreadAngle = Vector2.new(180, 0)
 polarLightsEmitter.Drag = 9
@@ -51,12 +51,12 @@ getgenv().AuroraModes = {
 		ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 100, 220))
 	}),
 	
-	Purple = ColorSequence.new({
-		ColorSequenceKeypoint.new(0, Color3.fromRGB(180, 80, 255)),
-		ColorSequenceKeypoint.new(0.25, Color3.fromRGB(200, 100, 255)),
-		ColorSequenceKeypoint.new(0.5, Color3.fromRGB(150, 50, 220)),
-		ColorSequenceKeypoint.new(0.75, Color3.fromRGB(120, 0, 180)),
-		ColorSequenceKeypoint.new(1, Color3.fromRGB(220, 120, 255))
+	Red = ColorSequence.new({
+		ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 40, 50)),
+		ColorSequenceKeypoint.new(0.2, Color3.fromRGB(255, 20, 40)),
+		ColorSequenceKeypoint.new(0.45,Color3.fromRGB(220, 10, 60)),
+		ColorSequenceKeypoint.new(0.7, Color3.fromRGB(255, 60, 90)),
+		ColorSequenceKeypoint.new(1,   Color3.fromRGB(200, 30, 70))
 	}),
 	
 	Blue = ColorSequence.new({
@@ -82,9 +82,9 @@ getgenv().SetAuroraMode = function(mode)
 	end
 end
 
-getgenv().SetAuroraMode("Purple")
+getgenv().SetAuroraMode("Red")
 
 while task.wait(2) do	
 	polarLightsPart.Position = camera.CFrame.Position + Vector3.new(0, -5, 0)
 	polarLightsPart.Orientation = Vector3.new(0, 0, -90)
-end
+endend
