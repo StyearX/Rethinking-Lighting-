@@ -1,7 +1,7 @@
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 
-local TEXTURE_CUMULUS = "rbxassetid://6812398408"
+local TEXTURE_CUMULUS = "rbxassetid://131943516036526"
 local TEXTURE_STRATUS = "rbxassetid://6816457996"
 
 local function CreateCloudTemplate(name, textureId)
